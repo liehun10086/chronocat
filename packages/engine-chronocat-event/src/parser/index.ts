@@ -413,7 +413,7 @@ async function parseElements(
         // 图片消息
         elements.push(
           ctx.chronocat.h('img', {
-            src: `${config.self_url}/v1/assets/${Buffer.from(
+            /*src: `${config.self_url}/v1/assets/${Buffer.from(
               JSON.stringify({
                 msgId: message.msgId,
                 chatType: message.chatType,
@@ -421,7 +421,8 @@ async function parseElements(
                 elementId: m.elementId,
                 thumbSize: m.picElement!.thumbFileSize,
               }),
-            ).toString('base64url')}`,
+            ).toString('base64url')}`,*/
+            src: `https://gchat.qpic.cn${m.picElement?.originImageUrl}`
           }),
         )
         break
